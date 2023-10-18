@@ -1,0 +1,42 @@
+.taskConteiner{
+    width: 100%;
+    position: static;
+    .taskConteinerColumn{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .tasksList{
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+        .taskConteiner-title{
+            width: 100%;
+            text-align: center;
+            padding: 20px 0px;
+            font-size: clamp(24px, 5vw, 48px);
+
+            color: #125ABE;
+        }
+        .btnNewTask{
+            user-select: none;
+            padding: 15px;
+            color: #fff;
+            background: #3FA7EF;
+            margin-top: 15px;
+            border-radius: 20px;
+            &:hover{
+                cursor: pointer;
+            }
+            &:active{
+                opacity: 0.8;
+                transform: scale(0.95);
+            }
+        }
+    }
+}
