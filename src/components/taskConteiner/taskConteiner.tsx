@@ -65,7 +65,15 @@ function TaskConteiner() {
                         `${projects[activeProject].name}`
                     }
                 </div>
+
                 <div className="tasksList">
+                    {
+                        projects.length === 0 ? 
+                        null
+                        :
+                        <div onClick={openNewTask} className="btnNewTask">+ новая задача</div>
+                        
+                    }
                     {
                         projects.length === 0 ? 
                         null
@@ -75,13 +83,7 @@ function TaskConteiner() {
                         ))
                     }
                 </div>
-                {
-                    projects.length === 0 ? 
-                    null
-                    :
-                    <div onClick={openNewTask} className="btnNewTask">+ новая задача</div>
-                    
-                }
+
             </div>
             {
                 activeModal === 'open' ?

@@ -8,27 +8,41 @@
         align-items: center;
         justify-content: center;
         .tasksList{
+            
             width: 70%;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 18px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            max-height: 65vh;
+            padding: 15px;
+            &::-webkit-scrollbar{
+                height: 2%;
+                width: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+                height: 1%;
+                background: #125ABE;
+                border-radius: 10px;
+            }
         }
         .taskConteiner-title{
             width: 100%;
             text-align: center;
             padding: 20px 0px;
             font-size: clamp(24px, 5vw, 48px);
-
             color: #125ABE;
         }
         .btnNewTask{
+            width: 100%;
             user-select: none;
-            padding: 15px;
+            padding: 25px 15px;
             color: #fff;
             background: #3FA7EF;
-            margin-top: 15px;
+            margin-bottom: 15px;
             border-radius: 20px;
             &:hover{
                 cursor: pointer;

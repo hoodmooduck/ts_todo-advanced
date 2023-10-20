@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './taskCard.scss'
 
 interface taskProps {
@@ -8,11 +9,19 @@ interface taskProps {
 }
 
 function TaskCard({name, discription, complited}:taskProps) {
+
+    const [openTask, setOpenTask] = useState<boolean>(false)
+
+    const openCard = () => {
+        setOpenTask((val) => !val)
+    }
+
     return(
-        <div className="taskCard">
+        <div onClick={() =>  openCard()} className="taskCard">
             <div className="taskCard-title">{name}</div>
             <div className="taskCard-disc">{discription}</div>
-            <div className="taslCard-compl">{complited}</div>
+            <div className={`taskCard-compl ${!complited? 'noComp' : 'comp'}`}></div>
+            {openTask ? <div className="open">открыто</div> : null}
         </div>
     )
 }
